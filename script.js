@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mouse.shift = event.shiftKey;
         mouse.ctrl = event.ctrlKey;
 
-        if (event.type === "mousedown") {
+        if (event.type === "mousedown" || event.type === "touchend") {
             event.preventDefault();
             // event.which - число, представляющее нажатую клавишу:
             // 0: Клавиша не нажата
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // 2: Средняя клавиша
             // 3: Правая клавиша
             mouse.buttonRaw = mouse.buttonRaw | mouse.buttons[event.which - 1];
-        } else if (event.type === "mouseup") {
+        } else if (event.type === "mouseup" || event.type === "touchstart") {
             mouse.buttonRaw &= mouse.buttons[event.which + 2];
         } else if (event.type === "mouseout") {
             mouse.buttonRaw = 0;
