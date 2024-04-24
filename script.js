@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         e.addEventListener('mouseover', mouseMove);
         e.addEventListener('mousewheel', mouseMove);
         e.addEventListener('DOMMouseScroll', mouseMove); // firefox
+        e.addEventListener('touchstart', mouseMove);
+        e.addEventListener('touchend', mouseMove);
 
         e.addEventListener("contextmenu", function (e) {
             e.preventDefault();
